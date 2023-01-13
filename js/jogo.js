@@ -27,7 +27,7 @@ function iniciaJogo() {
 	document.getElementById('cronometro').innerHTML = tempo_segundos;
 
 	// quantidade de baloes
-	var qtde_baloes = 20;
+	var qtde_baloes = 80;
 
 	cria_baloes(qtde_baloes);
 
@@ -61,6 +61,8 @@ function contagem_tempo(segundos) {
 
 function game_over() {
 
+	remeve_eventos_baloes();
+
 	alert('Fim de jogo, você não conseguiu estourar todos os balões a tempo.')
 
 }
@@ -89,7 +91,7 @@ function estourar(e) {
 	var id_balao = e.id;
 
 	document.getElementById(id_balao).setAttribute("onclick", "");
-	
+
 	document.getElementById(id_balao).src = 'imagens/balao_azul_pequeno_estourado.png';
 
 	pontuacao(-1);
@@ -132,5 +134,19 @@ function situacao_jogo(baloes_inteiros) {
 function parar_jogo() {
 
 	clearTimeout(timerId);
+
+}
+
+function remeve_eventos_baloes() {
+
+	var i = 1;
+
+	while (document.getElementById('b' + i)) {
+
+		document.getElementById('b' + i).onclick = '';
+
+		i++;
+
+	}
 
 }
