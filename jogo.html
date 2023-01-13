@@ -5,40 +5,44 @@
 
 		<title>Estourando balões</title>
 
+		<script type="text/javascript" src="js/jogo.js"></script>
+
 	</head>
 
-	<body>
+	<body onload="iniciaJogo()">
 
-		<div style="float: left; width: auto; height: 500px; background: #fff; border: 1px solid #a2a2a2;">
+		<div style="float: left; width: auto; height: 500px; background: #fff; border: 1px solid #a2a2a2; margin-right: 5px;">
 
-			<table border="1">
+			<table border="0">
 				<tr>
 					<td><img src="imagens/balao_azul_grande.png"></td>
-					<td>10</td>
+					<td><span id="baloes_inteiros" style="font-size: 40px;"></span></td>
 				</tr>
 			</table>
 			
 			<br/>
 
-			<table border="1">
+			<table border="0">
 				<tr>
 					<td><img src="imagens/balao_azul_grande_estourado.png"></td>
-					<td>10</td>
+					<td><span id="baloes_estourados" style="font-size: 40px;">0</span></td>
 				</tr>
 			</table>
 
 			<br/>
 
-			<table border="1" style="width: 140px; height: 132px;">
+			<table border="0" style="width: 140px; height: 132px;">
 				<tr>
-					<td style="background: url('imagens/cronometro.png')"></td>
+					<td style="background: url('imagens/cronometro.png'); text-align: center;">
+						<span id="cronometro" style="color: red; font-size: 30px;">0</span>
+					</td>
 				</tr>
 			</table>
 
 		</div>
 
-		<div style="float: left; width: 600px; height: 500px; background: url('imagens/cenario.png'); background-position: bottom;"></div>
-
+		<div id="cenario" 
+			style="float: left; width: 600px; height: 500px; background: url('imagens/cenario.png'); background-position: bottom;"></div>
 
 	</body>
 	
